@@ -23,7 +23,21 @@ def main():
 
 
 
+@app.route('/FIXME-ABOUT-US')
+def AboutUs():
+    pass
 
+@app.route('/FIXME-MyProfile')
+def MyProfile():
+    pass
+
+@app.route('/FIXME-SignIn')
+def SignIn():
+    pass
+
+@app.route('/FIXME-SignUp')
+def SignUp():
+    pass
 
 
 if __name__ == '__main__':
