@@ -3,6 +3,7 @@
 <html>
 <head>
 <head>
+
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,43 +14,90 @@
 <body>
 
 
-	<title>My-profile</title>
-	
+<!DOCTYPE>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Profile</title>
 </head>
 <body>
 <h1><center><u><i>My Profile</i></u></center></h1>
+<div class=“container”>  
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="{{url_for('main')}}">Home Page<span class="sr-only">(current)</span></a></li>
+        <li><a href="{{url_for('AboutUs')}}">About us<span class="sr-only">(current)</span></a></li>
+        <li><a href="{{url_for('MyProfile')}}">My profile<span class="sr-only">(current)</span></a></li>
+
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+
+              <li>
+              <a href="#">
+
+               <li><a href="{{url_for('SignIn')}}">Sign In</a></li>
+
+              <li><a href="{{url_for('add_user')}}">Don't have an account? Sign up</a></li>
+
+
+      
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>  
+	
+</div>    
+
+<div id="map"></div>
+<form action="url_for">
+	<center><h4><u><i>Write a Post</i></u></h4></center>
+	<center><textarea rows="4" cols="50" placeholder="Text here..." ></textarea>
+	<br>
+	<button type="button" class="btn btn-info">Post</button>
+</center>
 <br>
-<h3><u>Add a Post</u></h3>
-<textarea rows="4" cols="50" placeholder="Text here..."></textarea><br>
-<button type="button" class="btn btn-info">Post</button>
+<br>
+<br>
+<center>
+	<h4><u><i>Old Posts</i></u></h4>
+	<textarea rows="4" cols="50" placeholder="Text here..." id="id1" disabled></textarea>
+	<script type="text/javascript">
+		
+		function enabletextarrea() {
+			document.getElementById("id1").disabled = false;
+		}
+		function diabletextarrea() {
+			document.getElementById("id1").disabled = true;
+		}
+	</script>
+	<br>
+</form>
+<button value="Edit" onclick="enabletextarrea()" class="btn btn-info">Edit</button>
+	<button value="Done" onclick="diabletextarrea()" class="btn btn-info">Done</button>
+</center>
+
+
+
+</body>
+</html>
+
+
 
 </body>
 
 
-<div class="container-fluid text-center bg-grey">
-  <h2>Portfolio</h2>
-  <h4>What we have created</h4>
-  <div class="row text-center">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="paris.jpg" alt="Paris">
-        <p><strong>Paris</strong></p>
-        <p>Yes, we built Paris</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="newyork.jpg" alt="New York">
-        <p><strong>New York</strong></p>
-        <p>We built New York</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="sanfran.jpg" alt="San Francisco">
-        <p><strong>Maxico</strong></p>
-        <p>Yes, great  Maxico!! :)</p>
-      </div>
-    </div>
-</div>
+
 </html>
