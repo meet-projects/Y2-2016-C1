@@ -1,7 +1,7 @@
 .bg{
   background-image: url("nature.png");
 }
-#bla{
+.bla{
     background-color: transparent;
     border:none;
 }
@@ -42,3 +42,7 @@ input[type="password"] {
   border-top-right-radius: 0;
 }
 
+#map {
+  height: 500px;
+  width: 800px;
+}
