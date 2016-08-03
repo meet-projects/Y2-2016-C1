@@ -23,21 +23,21 @@ def main():
 
 
 
-@app.route('/FIXME-ABOUT-US')
+@app.route('/ABOUT-US')
 def AboutUs():
-    pass
+    return render_template('AboutUs.html')
 
-@app.route('/FIXME-MyProfile')
+@app.route('/MyProfile')
 def MyProfile():
-    pass
+    return render_template('Myprofile')
 
-@app.route('/FIXME-SignIn')
+@app.route('/SignIn')
 def SignIn():
-    pass
+    return render_template('sign_in.html')
 
-@app.route('/FIXME-SignUp')
+@app.route('/SignUp')
 def SignUp():
-    pass
+    return render_template('add_user.html')
 
 
 if __name__ == '__main__':
