@@ -1,79 +1,96 @@
 <doctype! html>
 <html>
-
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script src="{{ url_for('static', filename='script.js')}}"> </script>
 <title> country
 </title>
 <body>
 <h1> France </h1> 
 <form>
-<input type="radio" name="field" value="special food"> special food <br>
-<input type="radio" name="field" value="places to visit"> places to visit <br>
-<input type="radio" name="field" value="some culture"> some culture <br>
+<input type="radio" id="food" value="special food"> special food <br>
+<input type="radio" id="place" value="places to visit"> places to visit <br>
+<input type="radio" id="info" value="some culture"> some culture <br>
 </form>
 <!--information from us-->
-<p>
-Peru is a country in western South America. <br>
-it's a distillation of the oldest traditions and the finest building, <br>
-weaving and art made by the most sophisticated cultures on the continent.<br>
- In Peru the wildest landscapes – from frozen Andean peaks to the deep Amazon – <br>
- help us re-forge our connection to the natural world.
- </p>
-
- <p>
- <br><br><br><br>
- <img src="http://www.seriouseats.com/images/2015/06/20142828-peruvian-cuisine-tiradito-kevin-cox.jpg" width="300">
- <br><br>
- My first encounter with comida Peruana was over 20 years ago,<br>
-  thanks to my wife's Peruvian family. Their cooking was a study <br>
-  in juxtaposition: hot and cold, acidic and starchy, robust and delicate
-
-  </p>
-  <br><br><br>
-  <p>
-  <img src="http://www.seriouseats.com/images/2015/06/20142828-peruvian-cuisine-ceviche1-kevin-cox.jpg" width="300">
-  <br><br>
-  Peru's national dish, and an immediate obsession for nearly all who<br>
-  try it. Though other countries may claim their own variations with shrimp,<br>
-   octopus, scallops, tomatoes, and even tostada chips
-
-  </p>
-  <p>
-  <br><br><br><br>
-  <img src="http://www.seriouseats.com/images/2015/06/20142828-peruvian-cuisine-lomo-saltado-kevin-cox.jpg" width="300">
-  <br><br>
-  Almost as popular as ceviche, this chifa dish represents a fusion of Chinese<br>
-   stir frying and classic Peruvian ingredients. The crowd-pleasing dish is found <br>
-   nearly everywhere across Peru, and is equally popular in Peruvian restaurants abroad.
-
-   </p>
-   <p>
-   <br><br><br><br>
-   <img src="http://resources.touropia.com/gfx/d/best-places-to-visit-in-peru/puno.jpg" width="300">
-   <br><br>
-   Puno is a port city on the shores of Lake Titicaca on the Altiplano of Peru.<br>
-    Despite its picturesque hillside setting, the city itself is a ramshackle collection<br>
-    of mostly unfinished modern buildings.
-    </p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+    <div id="info-div">
     <p>
-    <br><br><br>
-    <img src="" width="300">
-    <br><br>
-    Once just an attractive roadside fishing port, Mancora is now the most<br>
-     trendy beach in Peru, attracting a surf crowd from around the globe. <br>
-     It’s a highly welcome and very enjoyable stopover when traveling along the north coast.
+    Peru is a country in western South America. <br>
+    it's a distillation of the oldest traditions and the finest building, <br>
+    weaving and art made by the most sophisticated cultures on the continent.<br>
+     In Peru the wildest landscapes – from frozen Andean peaks to the deep Amazon – <br>
+     help us re-forge our connection to the natural world.
+     </p>
+    <div></div>
+    <div class="col-md-4">
+    <div id="food-div"
+     <p>
+     <br><br><br><br>
+     <img src="http://www.seriouseats.com/images/2015/06/20142828-peruvian-cuisine-tiradito-kevin-cox.jpg" width="300">
+     <br><br>
+     My first encounter with comida Peruana was over 20 years ago,<br>
+      thanks to my wife's Peruvian family. Their cooking was a study <br>
+      in juxtaposition: hot and cold, acidic and starchy, robust and delicate
+
+      </p>
+      <br><br><br>
+      <p>
+      <img src="http://www.seriouseats.com/images/2015/06/20142828-peruvian-cuisine-ceviche1-kevin-cox.jpg" width="300">
+      <br><br>
+      Peru's national dish, and an immediate obsession for nearly all who<br>
+      try it. Though other countries may claim their own variations with shrimp,<br>
+       octopus, scallops, tomatoes, and even tostada chips
+
+      </p>
+      <p>
+      <br><br><br><br>
+      <img src="http://www.seriouseats.com/images/2015/06/20142828-peruvian-cuisine-lomo-saltado-kevin-cox.jpg" width="300">
+      <br><br>
+      Almost as popular as ceviche, this chifa dish represents a fusion of Chinese<br>
+       stir frying and classic Peruvian ingredients. The crowd-pleasing dish is found <br>
+       nearly everywhere across Peru, and is equally popular in Peruvian restaurants abroad.
+
+       </p>
+       </div></div>
+       <div class="col-md-4">
+       <div id="places-div">
+       <p>
+       <br><br><br><br>
+       <img src="http://resources.touropia.com/gfx/d/best-places-to-visit-in-peru/puno.jpg" width="300">
+       <br><br>
+       Puno is a port city on the shores of Lake Titicaca on the Altiplano of Peru.<br>
+        Despite its picturesque hillside setting, the city itself is a ramshackle collection<br>
+        of mostly unfinished modern buildings.
+        </p>
+        <p>
+        <br><br><br>
+        <img src="" width="300">
+        <br><br>
+        Once just an attractive roadside fishing port, Mancora is now the most<br>
+         trendy beach in Peru, attracting a surf crowd from around the globe. <br>
+         It’s a highly welcome and very enjoyable stopover when traveling along the north coast.
 
 
 
 
 
-    <br><br><br><br>
-    </p>
+        <br><br><br><br>
+        </p>
+        </div></div></div></div></div></div>
 
 
 
 
 
 
-   </body>
-   </head>
-   </html>
+       </body>
+       </head>
+       </html>

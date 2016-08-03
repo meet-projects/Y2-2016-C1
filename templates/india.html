@@ -1,103 +1,137 @@
 <doctype! html>
 <html>
 <head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script src="{{ url_for('static', filename='script.js')}}"> </script>
 <title> country
 </title>
 <body>
 <h1> India </h1>
 <form>
-<input type="radio" name="field" value="special food"> special food <br>
-<input type="radio" name="field" value="places to visit"> places to visit <br>
-<input type="radio" name="field" value="some culture"> some culture <br>
+<input type="radio" id="food" value="special food"> special food <br>
+<input type="radio" id="place" value="places to visit"> places to visit <br>
+<input type="radio" id="info" value="some culture"> some culture <br>
+
 </form>
 <!--information from us-->
-<p>
-India is one of the world's oldest civilizations. India is one of the most <br>
-populated countries in the world. The Indian culture, often labeled as an <br>
-amalgamation of several various cultures, spans across the Indian subcontinent<br>
-and has been influenced and shaped by a history that is several thousand years old.<br>
-Throughout the history of India, Indian culture has been heavily influenced by Dharmic <br>
-religions.They have been credited with shaping much of Indian philosophy, literature, <br>
-architecture, art and music. Greater India was the historical extent of Indian culture <br>
-beyond the Indian subcontinent. This particularly concerns the spread of Hinduism, Buddhism,<br>
-architecture, administration and writing system from India to other parts of Asia through the <br>
-Silk Road by the travellers and maritime traders during the early centuries of the Common Era.<br>
-To the west, Greater India overlaps with Greater Persia in the Hindu Kush and Pamir Mountains.<br>
-Over the centuries, there has been significant fusion of cultures between Buddhists, Hindus,<br>
- Muslims (Sunni, Shia, Sufi), Jains, Sikhs and various tribal populations in India
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+		<div id="info-div">
+		<p>
+		India is one of the world's oldest civilizations. India is one of the most <br>
+		populated countries in the world. The Indian culture, often labeled as an <br>
+		amalgamation of several various cultures, spans across the Indian subcontinent<br>
+		and has been influenced and shaped by a history that is several thousand years old.<br>
+		Throughout the history of India, Indian culture has been heavily influenced by Dharmic <br>
+		religions.They have been credited with shaping much of Indian philosophy, literature, <br>
+		architecture, art and music. Greater India was the historical extent of Indian culture <br>
+		beyond the Indian subcontinent. This particularly concerns the spread of Hinduism, Buddhism,<br>
+		architecture, administration and writing system from India to other parts of Asia through the <br>
+		Silk Road by the travellers and maritime traders during the early centuries of the Common Era.<br>
+		To the west, Greater India overlaps with Greater Persia in the Hindu Kush and Pamir Mountains.<br>
+		Over the centuries, there has been significant fusion of cultures between Buddhists, Hindus,<br>
+		 Muslims (Sunni, Shia, Sufi), Jains, Sikhs and various tribal populations in India.
+		 </p></div></div>
 
 <!--food-->	
-<p>
-<br> <br> <br>
-<img src="https://img.buzzfeed.com/buzzfeed-static/static/2013-11/enhanced/webdr01/19/15/grid-cell-8256-1384892528-7.jpg" width="300">
-<br> <br> 
-An aromatic rice dish cooked with several spices,<br> notably saffron, and a protein (typically chicken or mutton)<br> that's been marinated.<br>
-It's perfect for A huge family dinner.
-<br> what it feels like is Hearing the neighborhood <br> mosque sound its azan for evening prayers.
+        <div id="food-div">
+        <div class="col-md-4">
+        <p>
+		<br> <br> <br>
+		<img src="https://img.buzzfeed.com/buzzfeed-static/static/2013-11/enhanced/webdr01/19/15/grid-cell-8256-1384892528-7.jpg" width="300">
+		<br> <br> 
+		An aromatic rice dish cooked with several spices,<br> notably saffron, and a protein (typically chicken or mutton)<br> that's been marinated.<br>
+		It's perfect for A huge family dinner.
+		<br> what it feels like is Hearing the neighborhood <br> mosque sound its azan for evening prayers.<br>
+		<form>
+		<input type="textbpx" name="comment" value="comment">
+		</form>
+		<br><br><br><br>
+		</p>
+		<p>
 
-<br><br><br><br>
-</p>
-<p>
+		<img src="https://img.buzzfeed.com/buzzfeed-static/static/2013-11/enhanced/webdr07/18/17/enhanced-buzz-6623-1384814755-21.jpg?no-auto" width="300">
+		<br> <br>
 
-<img src="https://img.buzzfeed.com/buzzfeed-static/static/2013-11/enhanced/webdr07/18/17/enhanced-buzz-6623-1384814755-21.jpg?no-auto" width="300">
-<br> <br>
+		It's A variation on the traditional dimsum,<br> native to the North Eastern states that border Nepal<br> (where the dish originated), eaten with a fiery red chutney.<br>
+		it's perfect for A quick mid-evening snack.
+		it feels Like Kicking <br> your shoes off after a long day and settling into your couch <br> for hours of TV.
+		<br><form>
+		
 
-It's A variation on the traditional dimsum,<br> native to the North Eastern states that border Nepal<br> (where the dish originated), eaten with a fiery red chutney.<br>
-it's perfect for A quick mid-evening snack.
-it feels Like Kicking <br> your shoes off after a long day and settling into your couch <br> for hours of TV.
+		</p>
+		<form>
+		<input type="textbpx" name="comment" value="comment"><br>
+		</form>
+		<br><br><br><br>
+		<p>
 
+		<img src="https://img.buzzfeed.com/buzzfeed-static/static/2013-11/enhanced/webdr03/19/15/grid-cell-24967-1384893096-21.jpg" width="300"> <br> <br>
 
-</p>
-
-<br><br><br><br>
-<p>
-
-<img src="https://img.buzzfeed.com/buzzfeed-static/static/2013-11/enhanced/webdr03/19/15/grid-cell-24967-1384893096-21.jpg" width="300"> <br> <br>
-
- It's A heavy South Indian breakfast food. A fermented <br> batter of ground rice and lentils, 
-steamed in little circular <br> moulds.<br>
-Perfect For When you're done sleeping in on a <br> Saturday morning.
-<br> It Feels Like Being woken up by the smell of cooking
-
-</p>
-
-
-<!--places to visit-->
-<p> 
-<br><br><br><br>
-The Hills Of Mcleodganj <br>
-<img src="http://d2847ql9t214mi.cloudfront.net/wp-content/uploads/2015/05/Trekking-in-Mcleodganj.jpg" width="300"> <br> <br>
-
-The majestic mountains can call tourists<br>
-to experience the best of what nature has to <br>
-offer. Triund offers the spectacular view of <br>
-the Dhauladhar ranges. Experience bliss while <br>
-camping under billions of stars with your friends <br> in Triund.
-</p>
-<p>
-<br><br><br><br>
-the Valleys of Srinagar <br>
-<img src="http://d2847ql9t214mi.cloudfront.net/wp-content/uploads/2015/05/Kashmir-Valley.jpg" width="300"> <br> <br>
-if you're in your twenties, it's time to<br>
-add Kashmir to your list of best places to <br>
-visit in India. If there is heaven on earth,<br>
-this it is! Experience its charismatic charm <br>
-before the natural hits and turmoil spoils it all.<br>
-And when would be a better time to explore a flood-hit,<br>
-terror-stricken heaven on earth if not now?!
-</p>
-<p>
-<br><br><br><br>
-Banaras
-<br>
-<img src="http://d2847ql9t214mi.cloudfront.net/wp-content/uploads/2015/05/Ghats-in-Banaras.jpg" width="300"> <br> <br>
-The oldest city in the world, Banaras paints<br>
-the spiritual picture of India. Banaras may not<br>
-be on your list of places to visit in India before<br>
-you turn 30, but the beautiful ghats, the aartis and <br>
-prayers, a boat ride along the calm banks could change<br>
- this picture forever.
+		 It's A heavy South Indian breakfast food. A fermented <br> batter of ground rice and lentils, 
+		steamed in little circular <br> moulds.<br>
+		Perfect For When you're done sleeping in on a <br> Saturday morning.
+		<br> It Feels Like Being woken up by the smell of cooking<br>
+		<form>
+		<input type="textbpx" name="comment" value="comment">
+		</form>
+		</p></div></div>
 
 
-</body>
-</html>
+		<!--places to visit-->
+		<div class="col-md-4">
+		<div id="places-div">
+		<p> 
+		<br><br><br><br>
+		
+		<img src="http://d2847ql9t214mi.cloudfront.net/wp-content/uploads/2015/05/Trekking-in-Mcleodganj.jpg" width="300"> <br> <br>
+
+		The majestic mountains can call tourists<br>
+		to experience the best of what nature has to <br>
+		offer. Triund offers the spectacular view of <br>
+		the Dhauladhar ranges. Experience bliss while <br>
+		camping under billions of stars with your friends <br> in Triund.<br>
+		<form>
+		<input type="textbpx" name="comment" value="comment">
+		</form>
+		</p>
+		<p>
+		<br><br><br><br>
+		the Valleys of Srinagar <br>
+		<img src="http://d2847ql9t214mi.cloudfront.net/wp-content/uploads/2015/05/Kashmir-Valley.jpg" width="300"> <br> <br>
+		if you're in your twenties, it's time to<br>
+		add Kashmir to your list of best places to <br>
+		visit in India. If there is heaven on earth,<br>
+		this it is! Experience its charismatic charm <br>
+		before the natural hits and turmoil spoils it all.<br>
+		And when would be a better time to explore a flood-hit,<br>
+		terror-stricken heaven on earth if not now?!
+		<br><form>
+		<input type="textbpx" name="comment" value="comment">
+		</form>
+		</p>
+		<p>
+		<br><br><br><br>
+		
+	
+		<img src="http://d2847ql9t214mi.cloudfront.net/wp-content/uploads/2015/05/Ghats-in-Banaras.jpg" width="300"> <br> <br>
+		The oldest city in the world, Banaras paints<br>
+		the spiritual picture of India. Banaras may not<br>
+		be on your list of places to visit in India before<br>
+		you turn 30, but the beautiful ghats, the aartis and <br>
+		prayers, a boat ride along the calm banks could change<br>
+		 this picture forever.<br>
+		 <form>
+		<input type="textbpx" name="comment" value="comment">
+		</form>
+		</p></div></div></div></div>
+
+
+		</body>
+		</html>
