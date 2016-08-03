@@ -19,25 +19,28 @@ function initialize() {
   });
 
   // This event listener calls addMarker() when the map is clicked.
-  google.maps.event.addListener(map, 'click', function(event) {
-    addMarker(event.latLng, map);
-  });
+
 
   // Add a marker at the center of the map.
-  addMarker(france, map);
-  addMarker(india, map);
-  addMarker(peru, map);
+  addMarker(france, map, "");
+  addMarker(india, map, 'https://www.facebook.com/');
+  addMarker(peru, map, 'https://www.google.com/');
 }
 
 // Adds a marker to the map.
-function addMarker(location, map) {
+function addMarker(location, map, url) {
   // Add the marker at the clicked location, and add the next-available label
   // from the array of alphabetical characters.
   var marker = new google.maps.Marker({
     position: location,
     label: labels[labelIndex++ % labels.length],
+    title: 'This link opens Wikipedia home page',
     map: map
   });
+google.maps.event.addListener(marker, 'click', function() {
+  window.location.href = marker.url;
+});
+
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
