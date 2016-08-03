@@ -40,5 +40,11 @@ def add_user():
     return render_template('add_user.html')
 
 
+
+@app.route('/test')
+def test():
+    return render_template('france.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

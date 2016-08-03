@@ -8,7 +8,11 @@
   
 	<link rel="stylesheet" href="{{ url_for('static', filename='bootstarp.css') }}"> 
 	<script src="{{ url_for('static', filename='jquery.js')}}"></script>
-	<script src="{{ url_for('static', filename='bootstarp.js')}}"></script>  
+	<script src="{{ url_for('static', filename='bootstarp.js')}}"></script> 
+  <script src="{{ url_for('static', filename='homepagemap.js')}}"></script>  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUCW8HrOE01519wv0jsdMK_7xrHkeSQ08"></script>
+
 </head>
 
 <body>
@@ -50,7 +54,7 @@
 	
 </div>    
 
-
+<div id="map"></div>
 </body>
 
 
