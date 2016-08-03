@@ -13,14 +13,24 @@
 
 
 }
-
-.radio{
-  color:white;
+#hello{
+  font-family:verdana; font-size:300%; color:white;
+}
+.div-aboutus {
+  max-width: 900px;
+  padding: 30px 38px 66px;
+  margin: 0 auto;
+  background-color:gray;
+  opacity:0.6;
+  border: 3px dotted rgba(0,0,0,0.1);
+}
+.radio-inline{
+  color:black;
   size:50px;
 }
 .wrapper {    
   margin-top: 80px;
-  margin-bottom:20px;
+  margin-bottom:0px;
 }
 
 .form-signin {
@@ -30,8 +40,21 @@
   background-color: #eee;
   border: 3px dotted rgba(0,0,0,0.1);  
   }
+.form-signup {
+  max-width: 420px;
+  padding: 30px 38px 66px;
+  margin: 0 auto;
+  background-color: #eee;
+  border: 3px dotted rgba(0,0,0,0.1);  
+  }
 
 .form-signin-heading {
+  color: gray;
+  text-align:center;
+  margin-bottom: 30px;
+}
+.form-signup-heading {
+  color:gray;
   text-align:center;
   margin-bottom: 30px;
 }
