@@ -1,13 +1,26 @@
 .bg{
   background-image: url("nature.png");
 }
-.bla{
+#bla{
     background-color: transparent;
     border:none;
+
+
+}
+#blabla{
+    background-color: transparent;
+    border:none;
+
+
+}
+
+.radio{
+  color:white;
+  size:50px;
 }
 .wrapper {    
   margin-top: 80px;
-  margin-bottom: 20px;
+  margin-bottom:20px;
 }
 
 .form-signin {
@@ -37,7 +50,7 @@ input[type="text"] {
 }
 
 input[type="password"] {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
