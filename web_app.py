@@ -29,14 +29,14 @@ def AboutUs():
 
 @app.route('/MyProfile')
 def MyProfile():
-    return render_template('Myprofile')
+    return render_template('MyProfile.html')
 
 @app.route('/SignIn')
 def SignIn():
     return render_template('sign_in.html')
 
-@app.route('/SignUp')
-def SignUp():
+@app.route('/AddUser')
+def add_user():
     return render_template('add_user.html')
 
 
