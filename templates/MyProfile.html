@@ -53,7 +53,7 @@
 <div class=“container”>  
   <div class="container-fluid" id="blablabla">
 
-<form action="{{url_for('country')}}" method="post">
+<form action="{{url_for('CreatePost')}}" method="post">
 	<center><h3 style="color:grey;"><b><i>Write a Post</i></b></h3></center>
 
  </center>
@@ -64,17 +64,17 @@
 <div class="row">
   <div class="col-md-4"></div>
   <select name="country">
-      <option>france</option>
-      <option>India</option>
-      <option>Peru</option>
+      <option value="France">France</option>
+      <option value="India">India</option>
+      <option value="Peru">Peru</option>
 
   </select>
 
     <select name="subject">
 
-      <option>special food</option>
-            <option>places to visit</option>
-      <option>some culture</option>
+      <option value="food">special food</option>
+      <option value="places">places to visit</option>
+      <option value="culture">some culture</option>
 
 </select>
   
@@ -85,7 +85,7 @@
   <div class="col-md-4"></div>
 
   <div class="col-md-4">
-<textarea rows="1" cols="46" placeholder="name of the post"></textarea>
+<textarea rows="1" cols="46" name="title" placeholder="name of the post"></textarea>
 </div>
   <div class="col-md-4"></div>
 </div>
@@ -95,17 +95,17 @@
 
   <div class="col-md-4">
 
-<textarea rows="4" cols="46" placeholder="Text here..." ></textarea>
+<textarea rows="4" cols="46" name="text" placeholder="Text here..." ></textarea>
 </div>
 </div>
 
 
 	<br>
 
+<div class="post">
 
 
-
-	<center> <button type="submit" class="btn btn-info">Post</button> </center>
+	<center> <input type="submit" class="btn btn-info" value="Post"> </center>
 
 </form>
 <form>
