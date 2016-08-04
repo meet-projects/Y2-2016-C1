@@ -36,7 +36,8 @@ def SignIn():
 	if request.method == 'POST':
 		pass
 	#sername = request.form['username']
-	return redirect(url_for('index'))
+	else:
+		return redirect(url_for('main'))
 
 @app.route('/AddUser', methods=['GET', 'POST'])
 def AddUser():
