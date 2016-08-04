@@ -53,43 +53,31 @@
 <div class=“container”>  
   <div class="container-fluid" id="blablabla">
 
-<form action="url_for" >
+<form action="{{url_for('country')}}" method="post">
 	<center><h3 style="color:grey;"><b><i>Write a Post</i></b></h3></center>
 
- </center></form>
+ </center>
 
 
 
 
 <div class="row">
   <div class="col-md-4"></div>
+  <select name="country">
+      <option>france</option>
+      <option>India</option>
+      <option>Peru</option>
 
-  <div class="col-md-2">
-    <div class="dropdown">
-      <button class="dropbtn">Choose A Country</button>
-      <div class="dropdown-content">
-        <a href="{#">France</a>
-        <a href="#">India</a>
-        <a href="#">Peru</a>
-      </div>
-    </div>
-</div>
+  </select>
 
+    <select name="subject">
 
-  <div class="col-md-2">
+      <option>special food</option>
+            <option>places to visit</option>
+      <option>some culture</option>
 
-    <div class="dropdown">
-      <button class="dropbtn">Choose A subchect</button>
-      <div class="dropdown-content">
-        <a href="#">Special food </a>
-        <a href="#">Places to visit </a>
-        <a href="#">Some culture </a>
-      </div>
-    </div>
-  </div>
-    <div class="col-md-4"></div>
-
-</div>
+</select>
+  
 
 <br>
 
@@ -117,10 +105,10 @@
 
 
 
-	<center> <button type="button" class="btn btn-info">Post</button> </center>
+	<center> <button type="submit" class="btn btn-info">Post</button> </center>
 
-
-
+</form>
+<form>
 </div>
 
 <br>

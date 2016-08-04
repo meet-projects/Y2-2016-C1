@@ -68,6 +68,22 @@ def test2():
 def test3():
 	return render_template('peru.html')
 
+@app.route('/country', methods=['POST'])
+def country():
+	post= request.form['post']
+	country= request.form ['country']
+	
+
+
+	print(request.form)
+	return '1'
+
+
+@app.route('/addpost', methods=['POST'])
+def subject():
+	
+	print(request.form)
+	return '1'
 
 if __name__ == '__main__':
 	app.run(debug=True)
