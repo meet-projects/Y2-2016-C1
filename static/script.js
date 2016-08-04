@@ -7,34 +7,19 @@ $("#info-div").hide();
 		
 	
 
-	$("#info").change(function () { 
-		console.log('click');
-		console.log($('#info'));
-		if ($("#info").is(":checked") ){
+	$("#info").click(function () { 
 			$("#info-div").show(); 
-		
-			console.log('should hide');
-		}
 	}
 	);
-	$("#food").change(function () { 
-		console.log('click');
-		console.log($('#food'));
-		if ($("#food").is(":checked") ){
+	$("#food").click(function () { 
 			$("#food-div").show(); 
 		
-			console.log('should hide');
-		}
+		
 	}
 	);
-	$("#place").change(function () { 
-		console.log('click');
-		console.log($('#place'));
-		if ($("#place").is(":checked") ){
+	$("#place").click(function () { 
 			$("#places-div").show(); 
-		
-			console.log('should hide');
-		}
+
 	}
 	);
 
