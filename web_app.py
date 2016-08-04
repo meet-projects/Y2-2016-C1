@@ -48,9 +48,12 @@ def CreatePost():
 @app.route('/SignIn', methods=['GET', 'POST'])
 def SignIn():
 	if (request.method == 'POST'):
-		username = Person.username()
-		password = Person.password()
+		username = request.form['username']
+		password = request.form['password']
+		session.query(Person)
 		return render_template('main_page.html')
+	else :
+		return render_template('sign_in.html')
 		
 
 @app.route('/AddUser', methods=['GET', 'POST'])
