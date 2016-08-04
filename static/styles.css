@@ -1,6 +1,27 @@
 .bg{
   background-image: url("nature.png");
 }
+.beg{
+	background-image: url(images.jpg);
+	background-position: center;
+	background-height: 1000px;
+  	background-width: 2000px;
+  	background-size: cover;
+}
+.beeg{
+	background-image: url(download.png);
+	background-position: center;
+	background-height: 1000px;
+  	background-width: 2000px;
+  	background-size: cover;
+}
+.beeeg{
+	background-image: url(index.png);
+	background-position: center;
+	background-height: 1000px;
+  	background-width: 2000px;
+  	background-size: cover;
+}
 #bla{
     background-color: transparent;
     border:none;

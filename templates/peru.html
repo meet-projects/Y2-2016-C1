@@ -8,15 +8,51 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 <script src="{{ url_for('static', filename='script.js')}}"> </script>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
 <title> country
 </title>
-<body>
-<h1> France </h1> 
+<body class="beeeg">
+<iv class=“container”>  
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+<!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" id="cssmenu">
+      <ul class="nav navbar-nav">
+        <li><a href="{{url_for('main')}}">Home Page<span class="sr-only">(current)</span></a></li>
+        <li><a href="{{url_for('AboutUs')}}">About us<span class="sr-only">(current)</span></a></li>
+        <li><a href="{{url_for('MyProfile')}}">My profile<span class="sr-only">(current)</span></a></li>
+
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+
+              <li>
+              <a href="#">
+
+               <li><a href="{{url_for('SignIn')}}">Sign In</a></li>
+
+              <li><a href="{{url_for('AddUser')}}" >Sign up</a></li>
+
+
+      
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>  
+<center><h1><i>Peru</i></h1></center>
 <form>
-<input type="radio" id="food" value="special food"> special food <br>
-<input type="radio" id="place" value="places to visit"> places to visit <br>
-<input type="radio" id="info" value="some culture"> some culture <br>
+<center><div class="container">
+<input type="button" class="btn btn-info" id="food" value="Special Food   ">
+<input type="button" class="btn btn-info" id="place" value="Places to Visit">
+<input type="button" class="btn btn-info" id="info" value="Some Culture   ">
+</div></center>
 </form>
+
 <!--information from us-->
 <div class="container">
   <div class="row">
