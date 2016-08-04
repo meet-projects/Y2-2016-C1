@@ -34,9 +34,10 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
 
-              <li>
+              <li> 
               
                <li><a href="{{url_for('SignIn')}}">Sign In</a></li>
+          
 
               <li><a href="{{url_for('AddUser')}}">Don't have an account? Sign up</a></li>
 
@@ -51,17 +52,22 @@
 
 <div class = "container">
   <div class="wrapper" >
+
+  {% if error == True %}
+  <h3 style="color: red;">Wrong username or Password, try again!</h3>
+  {%endif%}
     <form action="{{url_for('SignIn')}}" method="post" name="Login_Form" class="form-signin" id="bla">       
         <h3 style="color:gray;" class="form-signin-heading">Welcome Back! Please Sign In</h3>
         
-        <input type="text" class="form-control" name="Username" placeholder="Username" required="" autofocus="" />
-        <input type="password" class="form-control" name="Password" placeholder="Password" required=""/>          
+        <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
+        <input type="password" class="form-control" name="password" placeholder="Password" required=""/>          
        <br>
         <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit">Login</button> 
-        <br> 
-<center>
+        <br>
+      <center>
+        <a href="{{url_for('AddUser')}}" class="btn btn-info" role="button">Sign Up</a>
         <a href="{{url_for('main')}}" class="btn btn-info" role="button">Cancel</a>    
-        </center>  
+      </center>  
     </form>     
   </div>
 </div>
