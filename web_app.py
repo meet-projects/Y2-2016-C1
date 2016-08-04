@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
+import ctypes
+from ctypes import *
 app = Flask(__name__)
 
 # SQLAlchemy stuff
@@ -31,28 +33,28 @@ def AboutUs():
 def MyProfile():
 	return render_template('MyProfile.html')
 
-@app.route('/SignIn')
+@app.route('/SignIn', methods=['GET', 'POST'])
 def SignIn():
-	if request.method == 'POST':
-		pass
-	#sername = request.form['username']
-	else:
-		return redirect(url_for('main'))
+	if (request.method == 'POST'):
+		username = Person.username()
+		password = Person.password()
+		return render_template('main_page.html')
+		
 
 @app.route('/AddUser', methods=['GET', 'POST'])
 def AddUser():
-	if (request.method == 'POST'):
-		
+	if (request.method == 'GET'):
+		return render_template('add_user.html')
+	else:
+		name= request.form['name']
 		username= request.form['username']
 		password= request.form['password']
 		gender= request.form['gender']
 		hometown= request.form['hometown']
-		user= Person( username=username, gender = gender, hometown=hometown, password=password)
+		user= Person(name=name, username=username, gender = gender, hometown=hometown, password=password)
 		session.add(user)
 		session.commit()
-		return render_template('main_page.html')
-	else:
-		return render_template('add_user.html')
+		return redirect(url_for('main'))
 
 
 
@@ -68,6 +70,22 @@ def test2():
 def test3():
 	return render_template('peru.html')
 
+@app.route('/country', methods=['POST'])
+def country():
+	post= request.form['post']
+	country= request.form ['country']
+	
+
+
+	print(request.form)
+	return '1'
+
+
+@app.route('/addpost', methods=['POST'])
+def subject():
+	
+	print(request.form)
+	return '1'
 
 if __name__ == '__main__':
 	app.run(debug=True)
