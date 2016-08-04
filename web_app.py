@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import ctypes
 from ctypes import *
 app = Flask(__name__)
-
+app.secret_key = 'hi ted'
 # SQLAlchemy stuff
 ### Add your tables here!
 # For example:
@@ -14,7 +14,7 @@ from sqlalchemy.orm import sessionmaker
 engine = create_engine('sqlite:///project.db')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
-session = DBSession()
+dbsession = DBSession()
 
 
 #YOUR WEB APP CODE GOES HERE
@@ -31,7 +31,13 @@ def AboutUs():
 
 @app.route('/MyProfile')
 def MyProfile():
-	return render_template('MyProfile.html')
+	user = dbsession.query(Person).filter_by(id = session['user_id']).first()
+	return render_template('MyProfile.html', user = user)
+
+@app.route('/logout')
+def logout():
+	session.pop('user_id', None)
+	return redirect(url_for('main'))
 
 @app.route('/CreatePost', methods=['POST'])
 def CreatePost():
@@ -41,8 +47,8 @@ def CreatePost():
 	subject = request.form['subject']
 	text = request.form['text']
 	post = Posts(country=country, title=title, subject=subject, text=text, person_id=person_id)
-	session.add(post)
-	session.commit()
+	dbsession.add(post)
+	dbsession.commit()
 	return redirect(url_for('MyProfile'))
 
 @app.route('/SignIn', methods=['GET', 'POST'])
@@ -50,8 +56,12 @@ def SignIn():
 	if (request.method == 'POST'):
 		username = request.form['username']
 		password = request.form['password']
-		session.query(Person)
-		return render_template('main_page.html')
+		user = dbsession.query(Person).filter_by(username = username).first()
+		if user == None or user.password != password:
+			return render_template('sign_in.html', error = True)
+		else:
+			session['user_id'] = user.id
+			return render_template('main_page.html')
 	else :
 		return render_template('sign_in.html')
 		
@@ -67,8 +77,8 @@ def AddUser():
 		gender= request.form['gender']
 		hometown= request.form['hometown']
 		user= Person(name=name, username=username, gender = gender, hometown=hometown, password=password)
-		session.add(user)
-		session.commit()
+		dbsession.add(user)
+		dbsession.commit()
 		return redirect(url_for('main'))
 
 
