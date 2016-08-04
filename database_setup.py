@@ -19,8 +19,10 @@ class Person(Base):
 
 class Posts(Base):
 	__tablename__ = 'posts'
-	id = Column(Integer, primary_key=True)   
-	post = Column(String)
-	country = Column(String) 
+	id = Column(Integer, primary_key=True)
+	title = Column(String)
+	text = Column(String)
+	country = Column(String)
+	subject = Column(String)
 	person_id = Column(Integer, ForeignKey('person.id'))
 	person = relationship("Person")

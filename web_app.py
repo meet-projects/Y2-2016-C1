@@ -7,7 +7,7 @@ app = Flask(__name__)
 ### Add your tables here!
 # For example:
 # from database_setup import Base, Potato, Monkey
-from database_setup import Base, Person
+from database_setup import *
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -32,6 +32,18 @@ def AboutUs():
 @app.route('/MyProfile')
 def MyProfile():
 	return render_template('MyProfile.html')
+
+@app.route('/CreatePost', methods=['POST'])
+def CreatePost():
+	person_id = -1
+	country = request.form['country']
+	title = request.form['title']
+	subject = request.form['subject']
+	text = request.form['text']
+	post = Posts(country=country, title=title, subject=subject, text=text, person_id=person_id)
+	session.add(post)
+	session.commit()
+	return redirect(url_for('MyProfile'))
 
 @app.route('/SignIn', methods=['GET', 'POST'])
 def SignIn():
