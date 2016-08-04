@@ -10,11 +10,12 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+
 
   
 </head>
-<body>
-
+<body class="bg">
 <div class=“container”>  
   <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -29,7 +30,7 @@
         <li><a href="{{url_for('MyProfile')}}">My profile<span class="sr-only">(current)</span></a></li>
 
       </ul>
-      <form class="navbar-form navbar-left">
+      <form class="navbar-form navbar-left" >
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
@@ -37,48 +38,101 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
 
-              <li>
-              <a href="#">
-
                <li><a href="{{url_for('SignIn')}}">Sign In</a></li>
 
               <li><a href="{{url_for('add_user')}}">Don't have an account? Sign up</a></li>
-
-
       
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>  
-  
-</div>    
+</div>  
 
-<!DOCTYPE>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>My Profile</title>
-</head>
-<body>
-<h1><center><u><i>My Profile</i></u></center></h1>
+<!--div class="bg"-->
+<h1 style="color:white;"><center><b><i>My Profile</i></b></center></h1>
 <div class=“container”>  
-	<nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <div class="container-fluid" id="blablabla">
 
-<div id="map"></div>
-<form action="url_for">
-	<center><h4><u><i>Write a Post</i></u></h4></center>
-	<center><textarea rows="4" cols="50" placeholder="Text here..." ></textarea>
-	<br>
-	<button type="button" class="btn btn-info">Post</button>
-</center>
+<form action="url_for" >
+	<center><h4 style="color:grey;"><b><i>Write a Post</i></b></h4></center>
+
+ </center></form>
+
+
+
+
+<div class="row">
+  <div class="col-md-4"></div>
+
+  <div class="col-md-2">
+    <div class="dropdown">
+      <button class="dropbtn">Choose A Country</button>
+      <div class="dropdown-content">
+        <a href="{{url_for('test')}}">France</a>
+        <a href="{{url_for('test2')}}">India</a>
+        <a href="{{url_for('test3')}}">Peru</a>
+      </div>
+    </div>
+</div>
+
+
+  <div class="col-md-2">
+
+    <div class="dropdown">
+      <button class="dropbtn">Choose A subchect</button>
+      <div class="dropdown-content">
+        <a href="#">Special food </a>
+        <a href="#">Places to visit </a>
+        <a href="#">Some culture </a>
+      </div>
+    </div>
+  </div>
+    <div class="col-md-4"></div>
+
+</div>
+
 <br>
+
+<div class="row">
+  <div class="col-md-4"></div>
+
+  <div class="col-md-4">
+<textarea rows="1" cols="46" placeholder="name of the post"></textarea>
+</div>
+  <div class="col-md-4"></div>
+</div>
+<div class="row">
+
+  <div class="col-md-4"></div>
+
+  <div class="col-md-4">
+
+<textarea rows="4" cols="46" placeholder="Text here..." ></textarea>
+</div>
+</div>
+
+
+	<br>
+
+
+
+
+	<center> <button type="button" class="btn btn-info">Post</button> </center>
+
+
+
+</div>
+
 <br>
 <br>
 <center>
-	<h4><u><i>Old Posts</i></u></h4>
-	<textarea rows="4" cols="50" placeholder="Text here..." id="id1" disabled></textarea>
+	<h4 style="color:grey;"><b><i>Old Posts</i></b></h4>
+	<center><textarea rows="1" cols="46" placeholder="old post name:" id="id1" disabled></textarea>
+
+
+  <center><textarea rows="4" cols="46" placeholder="Text here..." id="id1" disabled></textarea>
+
+
 	<script type="text/javascript">
 		
 		function enabletextarrea() {
@@ -89,16 +143,14 @@
 		}
 	</script>
 	<br>
-</form>
 <button value="Edit" onclick="enabletextarrea()" class="btn btn-info">Edit</button>
 	<button value="Done" onclick="diabletextarrea()" class="btn btn-info">Done</button>
 </center>
 
+</form>
 
-
-</body>
-</html>
-
+</div>
+</div>
 
 
 </body>
