@@ -18,19 +18,19 @@ var peru = { lat: 9.1900, lng: 75.0152 };
     position: france,
     label: labels[labelIndex++ % labels.length],
     title: 'This link opens Wikipedia home page',
-    url : '/test'
+    url : '/France'
   });
   var IndiaMarker = new google.maps.Marker({
     position: india,
     label: labels[labelIndex++ % labels.length],
     title: 'This link opens Wikipedia home page',
-    url : '/test2'
+    url : '/India'
   });
   var PeruMarker = new google.maps.Marker({
     position: peru,
     label: labels[labelIndex++ % labels.length],
     title: 'This link opens Wikipedia home page',
-    url : '/test3'
+    url : '/Peru'
   });
 
 function initialize() {
