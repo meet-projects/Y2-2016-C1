@@ -37,8 +37,8 @@
 
                <li><a href="{{url_for('SignIn')}}">Sign In</a></li>
 
-              <li><a href="{{url_for('add_user')}}">Sign up</a></li>
 
+              <li><a href="{{url_for('AddUser')}}">Don't have an account? Sign up</a></li>
 
       
       </ul>
@@ -52,16 +52,16 @@
 <div class = "container">
   <div class="wrapper" >
 
-    <form action="{{url_for('add_user')}}" class="form-signup" method="post" name="signup_Form"  id="blabla"  >       
+    <form action="{{url_for('AddUser')}}" class="form-signup" method="post" name="signup_Form"  id="blabla"  >       
         <h3 class="form-signup-heading">Sign Up</h3>
         
-        <input type="text" class="form-control" name="Username" placeholder="Username" required="" autofocus="" />
-        <input type="password" class="form-control" name="Password" placeholder="Password" required="" autofocus=""/>          
+        <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
+        <input type="password" class="form-control" name="password" placeholder="Password" required="" autofocus=""/>          
          <input type="text" class="form-control" name="hometown" placeholder="Hometown" required="" autofocus=""/>          <br>
 
-<label class="radio-inline"><input type="radio">Female</label>
-<label class="radio-inline"><input type="radio">Male</label>
-<label class="radio-inline"><input type="radio">Other</label>
+<label class="radio-inline"><input type="radio" name="gender">Female</label>
+<label class="radio-inline"><input type="radio" name="gender">Male</label>
+<label class="radio-inline"><input type="radio" name="gender">Other</label>
 <br>
 
        <br>

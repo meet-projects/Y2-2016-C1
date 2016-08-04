@@ -1,11 +1,11 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 # SQLAlchemy stuff
 ### Add your tables here!
 # For example:
 # from database_setup import Base, Potato, Monkey
-from database_setup import Base
+from database_setup import Base, Person
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -19,40 +19,54 @@ session = DBSession()
 
 @app.route('/')
 def main():
-    return render_template('main_page.html')
+	return render_template('main_page.html')
 
 
 
 @app.route('/ABOUT-US')
 def AboutUs():
-    return render_template('AboutUs.html')
+	return render_template('AboutUs.html')
 
 @app.route('/MyProfile')
 def MyProfile():
-    return render_template('MyProfile.html')
+	return render_template('MyProfile.html')
 
 @app.route('/SignIn')
 def SignIn():
-    return render_template('sign_in.html')
+	if request.method == 'POST':
+		pass
+	#sername = request.form['username']
+	return redirect(url_for('index'))
 
-@app.route('/AddUser')
-def add_user():
-    return render_template('add_user.html')
+@app.route('/AddUser', methods=['GET', 'POST'])
+def AddUser():
+	if (request.method == 'POST'):
+		
+		username= request.form['username']
+		password= request.form['password']
+		gender= request.form['gender']
+		hometown= request.form['hometown']
+		user= Person( username=username, gender = gender, hometown=hometown, password=password)
+		session.add(user)
+		session.commit()
+		return render_template('main_page.html')
+	else:
+		return render_template('add_user.html')
 
 
 
-@app.route('/test')
+@app.route('/France')
 def test():
-    return render_template('france.html')
+	return render_template('france.html')
 
-@app.route('/test2')
+@app.route('/India')
 def test2():
-    return render_template('india.html')
+	return render_template('india.html')
 
-@app.route('/test3')
+@app.route('/Peru')
 def test3():
-    return render_template('peru.html')
+	return render_template('peru.html')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+	app.run(debug=True)
