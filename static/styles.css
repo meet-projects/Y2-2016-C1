@@ -169,3 +169,41 @@ input[type="password"] {
     border: none;
     right:20px;
     bottom:25px;
+}
+#texti {
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+ .select_join {
+   width: 170px;
+   height: 28px;
+   overflow: hidden;
+   background: url('http://s24.postimg.org/lyhytocf5/dropdown.png') no-repeat right #FEFEFE;
+   border: #FEFEFE 1px solid;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+-webkit-box-shadow: inset 0px 0px 10px 1px #FEFEFE;
+box-shadow: inset 0px 0px 10px 1px #FEFEFE;
+   margin-left:550px;
+   }
+.select_join select {
+  
+   background: transparent;
+   width: 170px;
+   font-size:13pt;
+   color:grey;
+   border: 0;
+   border-radius: 0;
+   height: 28px;
+   -webkit-appearance: none;
+   
+   }
+   .select_join select:focus {
+    outline: none;
+
+}

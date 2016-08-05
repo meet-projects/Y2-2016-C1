@@ -61,23 +61,26 @@
 
 
 
-<div class="row">
-  <div class="col-md-4"></div>
-  <select name="country">
+<div class="row select_join">
+  <div class="col-md-6">
+  <select name="txtCountry">
+      <option value="None">Country</option>
       <option value="France">France</option>
       <option value="India">India</option>
       <option value="Peru">Peru</option>
 
   </select>
-
-    <select name="subject">
-
+  </div>
+  </div>
+<div class="row select_join">
+    <select name="txtCountry" >
+      <option value="None">Category</option>
       <option value="food">special food</option>
       <option value="places">places to visit</option>
       <option value="culture">some culture</option>
 
 </select>
-  
+</div>
 
 <br>
 
@@ -115,11 +118,11 @@
 <br>
 <center>
 	<h3 style="color:grey;"><b><i>Old Posts</i></b></h3>
-	<center><textarea rows="1" cols="46" placeholder="old post name:" id="id1" disabled>{{post.title}}</textarea>
+	<center><textarea id="texti" rows="1" cols="46" placeholder="old post name:" id="id1" disabled>{{post.title}}</textarea>
 
 
-  <center><textarea rows="4" cols="46" placeholder="Text here..." id="id1" disabled>{{post.text}}</textarea>
-
+  <center><textarea id="texti" rows="4" cols="46" placeholder="Text here..." id="id1" disabled>{{post.text}}</textarea>
+ 
 
 	<script type="text/javascript">
 		
