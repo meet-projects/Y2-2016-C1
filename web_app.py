@@ -19,6 +19,7 @@ dbsession = DBSession()
 
 #YOUR WEB APP CODE GOES HERE
 
+
 @app.route('/')
 def main():
 	return render_template('main_page.html')
@@ -32,7 +33,8 @@ def AboutUs():
 @app.route('/MyProfile')
 def MyProfile():
 	user = dbsession.query(Person).filter_by(id = session['user_id']).first()
-	return render_template('MyProfile.html', user = user)
+	post = dbsession.query(Posts).all()[-1]
+	return render_template('MyProfile.html', user = user, post = post )
 
 @app.route('/logout')
 def logout():
@@ -41,7 +43,7 @@ def logout():
 
 @app.route('/CreatePost', methods=['POST'])
 def CreatePost():
-	person_id = -1
+	person_id = session['user_id']
 	country = request.form['country']
 	title = request.form['title']
 	subject = request.form['subject']
@@ -79,7 +81,7 @@ def AddUser():
 		user= Person(name=name, username=username, gender = gender, hometown=hometown, password=password)
 		dbsession.add(user)
 		dbsession.commit()
-		return redirect(url_for('main'))
+		return redirect(url_for('SignIn'))
 
 
 

@@ -161,3 +161,11 @@ input[type="password"] {
 .dropdown{
       z-index: 100;
 }
+.img-responsive2{
+    position: relative;
+    height: 60px;
+    width: 90px;
+    display: flex-inline;
+    border: none;
+    right:20px;
+    bottom:25px;
