@@ -145,7 +145,76 @@
 		</p>
 		</div></div></div></div>
 
+
+
+
 </div>
+
+
+<form action="{{url_for('CreatePost')}}" method="post">
+	<center><h3 style="color:grey;"><b><i>Write a Post</i></b></h3></center>
+
+ </center>
+
+
+
+
+<div class="row select_join">
+  <div class="col-md-6">
+  <select name="txtCountry">
+      <option value="None">Country</option>
+      <option value="France">France</option>
+      <option value="India">India</option>
+      <option value="Peru">Peru</option>
+
+  </select>
+  </div>
+  </div>
+<div class="row select_join">
+    <select name="txtCountry" >
+      <option value="None">Category</option>
+      <option value="food">special food</option>
+      <option value="places">places to visit</option>
+      <option value="culture">some culture</option>
+
+</select>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-md-4"></div>
+
+  <div class="col-md-4">
+<textarea rows="1" cols="46" name="title" placeholder="name of the post"></textarea>
+</div>
+  <div class="col-md-4"></div>
+</div>
+<div class="row">
+
+  <div class="col-md-4"></div>
+
+  <div class="col-md-4">
+
+<textarea rows="4" cols="46" name="text" placeholder="Text here..." ></textarea>
+</div>
+</div>
+
+
+	<br>
+
+<div class="post">
+
+
+	<center> <input type="submit" class="btn btn-info" value="Post"> </center>
+
+</form>
+<form>
+</div>
+
+<br>
+<br>
+
 </body>
 </head>
 </html>

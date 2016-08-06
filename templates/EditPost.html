@@ -2,18 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<head>
-
-  <title>My Profile</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
-
-
-  
+	<title>hi</title>
 </head>
 <body class="bg">
 <div class=“container”>  
@@ -48,28 +43,25 @@
 </nav>  
 </div>  
 
-<!--div class="bg"-->
-<h1 style="color:white;"><center><b><u><i>{{ user.name }}'s Profile</i></u></b></center></h1>
-<div class="container">
-<div class="row">
-<h3 style="color:grey;"><b><i>Old Posts</i></b></h3>
-{% for post in posts %}
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <div class="caption">
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.text }}</p>
-        <p><a href="{{ url_for('EditPost', post_id=post.id, user_id=user.id) }}" class="btn btn-primary" role="button">Edit</a></p>
-      </div>
-    </div>
-  </div>
-{% endfor %}
-</div>
+
+<form action="{{url_for('EditPost', post_id = post.id, user_id=user_id )}}" method="post">
+
+<input type="text" name="title" value="{{ post.title }}">
+<br>
+<input type="text" name="text" value="{{ post.text }}">
+<br>
+
+
+<input type="submit" value="Submit">
+<br>
+
+</form>
+
+<a href="{{url_for('MyProfile')}}" class="btn btn-info" role="button">Cancel</a>
+<a href="{{url_for('DeletePost' , post_id=post.id)}}" class="btn btn-info" role="button">Delete Post</a>
+<!-- 'delete_user',person_id = user.id  -->
 </div>
 
 
 </body>
-
-
-
 </html>

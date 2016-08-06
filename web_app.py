@@ -33,8 +33,8 @@ def AboutUs():
 @app.route('/MyProfile')
 def MyProfile():
 	user = dbsession.query(Person).filter_by(id = session['user_id']).first()
-	post = dbsession.query(Posts).all()[-1]
-	return render_template('MyProfile.html', user = user, post = post )
+	posts = dbsession.query(Posts).filter_by(person_id = session['user_id']).all()
+	return render_template('MyProfile.html', user = user, posts = posts )
 
 @app.route('/logout')
 def logout():
@@ -60,6 +60,25 @@ def CreatePost():
 	dbsession.add(post)
 	dbsession.commit()
 	return redirect(url_for('MyProfile'))
+
+@app.route('/EditPost/<int:post_id>/<int:user_id>', methods=['GET', 'POST'])
+def EditPost(post_id, user_id):
+	post = dbsession.query(Posts).filter_by(id=post_id).first()
+	if request.method == 'GET':
+		return render_template('EditPost.html', post=post, user_id=user_id)
+	else:
+		user=dbsession.query(Person).filter_by(id=user_id).first()
+		post.title = request.form['title']
+		post.text = request.form['text']
+		dbsession.commit()
+		return redirect(url_for('MyProfile'))
+
+@app.route('/DeletePost/<int:post_id>', methods=['POST'])
+def DeletePost(post_id):
+	post = dbsession.query(Posts).filter_by(id=post_id).first()
+	session.delete(post)
+	session.commit()
+	return render_template('MyProfile')
 
 @app.route('/SignIn', methods=['GET', 'POST'])
 def SignIn():
