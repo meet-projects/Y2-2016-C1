@@ -1,27 +1,7 @@
 .bg{
   background-image: url("nature.png");
 }
-.beg{
-	background-image: url(images.jpg);
-	background-position: center;
-	background-height: 1000px;
-  	background-width: 2000px;
-  	background-size: cover;
-}
-.beeg{
-	background-image: url(download.png);
-	background-position: center;
-	background-height: 1000px;
-  	background-width: 2000px;
-  	background-size: cover;
-}
-.beeeg{
-	background-image: url(index.png);
-	background-position: center;
-	background-height: 1000px;
-  	background-width: 2000px;
-  	background-size: cover;
-}
+
 #bla{
     background-color: transparent;
     border:none;
@@ -42,7 +22,7 @@
 }
 .div-aboutus {
   max-width: 900px;
-  padding: 30px 38px 66px;
+  padding: 30px 38px 30px;
   margin: 0 auto;
   background-color:gray;
   opacity:0.6;
@@ -103,7 +83,7 @@ input[type="password"] {
 }
 
 #map {
-  height: 700px;
+  height: 585px;
   width: 1280px;
 }
 #cssmenu {
@@ -205,5 +185,18 @@ box-shadow: inset 0px 0px 10px 1px #FEFEFE;
    }
    .select_join select:focus {
     outline: none;
+
+}
+.hi {
+  align-content: center;
+}
+
+.ziv{
+margin-top: 14px;
+font-size:120%;
+}
+
+.ron{
+  margin-left:-40px;
 
 }
