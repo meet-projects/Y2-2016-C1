@@ -43,12 +43,20 @@ def logout():
 
 @app.route('/CreatePost', methods=['POST'])
 def CreatePost():
+	print("==============================================================================")
 	person_id = session['user_id']
-	country = request.form['country']
+	# country = request.form['country']
+	# print(country)
 	title = request.form['title']
-	subject = request.form['subject']
+	print(title)
+	# subject = request.form['subject']
+	# print(subject)
 	text = request.form['text']
-	post = Posts(country=country, title=title, subject=subject, text=text, person_id=person_id)
+	print("functioning")
+	post = Posts(country="", title=title, subject="subject", text=text, person_id=person_id)
+	print("==============================================================================")
+	print(post.text)
+	print("==============================================================================")
 	dbsession.add(post)
 	dbsession.commit()
 	return redirect(url_for('MyProfile'))
