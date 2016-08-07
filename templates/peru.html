@@ -1,5 +1,14 @@
 <doctype! html>
 <html>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+      position: 700px;
+      color: white;
+  }
+  </style>
 <head>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <!-- jQuery library -->
@@ -9,34 +18,37 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 <script src="{{ url_for('static', filename='script.js')}}"> </script>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
-<title> country
+<title> Peru
 </title>
 <body class="bg">
-<iv class=“container”>  
-  <nav class="navbar navbar-default">
+ <div class=“container”>  
+  <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
-<!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+
+
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" id="cssmenu">
       <ul class="nav navbar-nav">
-        <li><a href="{{url_for('main')}}">Home Page<span class="sr-only">(current)</span></a></li>
-        <li><a href="{{url_for('AboutUs')}}">About us<span class="sr-only">(current)</span></a></li>
-        <li><a href="{{url_for('MyProfile')}}">My profile<span class="sr-only">(current)</span></a></li>
+
+
+        <li><h1 class="navbar-brand"> <a href="{{url_for('main')}}"><img class="img-responsive2" src="static/Untitled-1.png"></a> </h1></li>
+<!--         <li><a href="{{url_for('main')}}"><img src="Untitled-1.png" height="42" width="42"></a>-->
+
+        <li class="ron ziv"><a href="{{url_for('main')}}">Home Page<span class="sr-only">(current)</span></a></li>
+        <li class="ziv"><a href="{{url_for('AboutUs')}}">About us<span class="sr-only">(current)</span></a></li>
+        <li class="ziv"><a href="{{url_for('MyProfile')}}">My profile<span class="sr-only">(current)</span></a></li>
 
       </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+
       <ul class="nav navbar-nav navbar-right">
 
               <li>
               <a href="#">
 
-               <li><a href="{{url_for('SignIn')}}">Sign In</a></li>
+              <li class="ziv"><a href="{{url_for('logout')}}">Log Out</a></li>
 
-              <li><a href="{{url_for('AddUser')}}" >Sign up</a></li>
+              <li class="ziv"><a href="{{url_for('SignIn')}}">Sign In</a></li>
 
 
       
@@ -44,83 +56,156 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>  
-<center><h1><i>Peru</i></h1></center>
-<form>
-<center><div class="container">
-<input type="button" class="btn btn-info" id="food" value="Special Food   ">
-<input type="button" class="btn btn-info" id="place" value="Places to Visit">
-<input type="button" class="btn btn-info" id="info" value="Some Culture   ">
-</div></center>
-</form>
+  
+</div>    
 
-<!--information from us-->
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-    <div id="info-div">
-    <p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class=“container”>  
+  
+<div class="container-fluid">
+
+</nav>  
+<div class="div-aboutus">
+  <center>
+
+  <h3 id="hello">Some General Knowledge</h3>
+  <div style="font-family:verdana; font-size:200%; color:white;">
+<p>
     Peru is a country in western South America. <br>
-    it's a distillation of the oldest traditions and the finest building, <br>
+    it's a distillation of the oldest traditions and the finest building,
     weaving and art made by the most sophisticated cultures on the continent.<br>
-     In Peru the wildest landscapes – from frozen Andean peaks to the deep Amazon – <br>
+     In Peru the wildest landscapes – from frozen Andean peaks to the deep Amazon – 
      help us re-forge our connection to the natural world.
-     </p>
-    <div></div>
-    <div class="col-md-4">
-    <div id="food-div"
-     <p>
-     <br><br><br><br>
-     <img src="http://www.seriouseats.com/images/2015/06/20142828-peruvian-cuisine-tiradito-kevin-cox.jpg" width="300">
-     <br><br>
-     My first encounter with comida Peruana was over 20 years ago,<br>
-      thanks to my wife's Peruvian family. Their cooking was a study <br>
-      in juxtaposition: hot and cold, acidic and starchy, robust and delicate
+    </p>
+</div>
+</div>  
+</center>
+</div>
 
-      </p>
-      <br><br><br>
-      <p>
-      <img src="http://www.seriouseats.com/images/2015/06/20142828-peruvian-cuisine-ceviche1-kevin-cox.jpg" width="300">
+
+
+
+
+<div class=“container”>  
+  
+<div class="container-fluid">
+</nav>  
+<div class="div-aboutus">
+  <center>
+
+  <h3 id="hello">Food</h3>
+  <div style="font-family:verdana; font-size:200%; color:white;">
+<p>
+     "My first encounter with comida Peruana was over 20 years ago,
+      thanks to my wife's Peruvian family. Their cooking was a study
+      in juxtaposition: hot and cold, acidic and starchy, robust and delicate"
       <br><br>
-      Peru's national dish, and an immediate obsession for nearly all who<br>
-      try it. Though other countries may claim their own variations with shrimp,<br>
-       octopus, scallops, tomatoes, and even tostada chips
-
-      </p>
-      <p>
-      <br><br><br><br>
-      <img src="http://www.seriouseats.com/images/2015/06/20142828-peruvian-cuisine-lomo-saltado-kevin-cox.jpg" width="300">
-      <br><br>
-      Almost as popular as ceviche, this chifa dish represents a fusion of Chinese<br>
-       stir frying and classic Peruvian ingredients. The crowd-pleasing dish is found <br>
-       nearly everywhere across Peru, and is equally popular in Peruvian restaurants abroad.
-
-       </p>
-       </div></div>
-       <div class="col-md-4">
-       <div id="places-div">
-       <p>
-       <br><br><br><br>
-       <img src="http://resources.touropia.com/gfx/d/best-places-to-visit-in-peru/puno.jpg" width="300">
+            Peru's national dish, and an immediate obsession for nearly all who
+      try it. <br>Though other countries may claim their own variations with shrimp,
+       octopus, scallops, tomatoes, and even tostada chips.
        <br><br>
+             Almost as popular as ceviche, this chifa dish represents a fusion of Chinese
+       stir frying and classic Peruvian ingredients.<br> The crowd-pleasing dish is found 
+       nearly everywhere across Peru, and is equally popular in Peruvian restaurants abroad.
+    </p>
+</div>
+</div>  
+</center>
+
+
+
+
+
+<div class=“container”>  
+  
+<div class="container-fluid">
+</nav>  
+<div class="div-aboutus">
+  <center>
+
+  <h3 id="hello">Places To Visit</h3>
+  <div style="font-family:verdana; font-size:200%; color:white;">
+  <p>
        Puno is a port city on the shores of Lake Titicaca on the Altiplano of Peru.<br>
-        Despite its picturesque hillside setting, the city itself is a ramshackle collection<br>
+        Despite its picturesque hillside setting, the city itself is a ramshackle collection
         of mostly unfinished modern buildings.
-        </p>
-        <p>
-        <br><br><br>
-        <img src="" width="300">
         <br><br>
-        Once just an attractive roadside fishing port, Mancora is now the most<br>
+                Once just an attractive roadside fishing port, Mancora is now the most
          trendy beach in Peru, attracting a surf crowd from around the globe. <br>
          It’s a highly welcome and very enjoyable stopover when traveling along the north coast.
+    <br>
+    </p>
+</div>
+</div>  
+</center>
 
 
 
 
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
 
-        <br><br><br><br>
-        </p>
-        </div></div></div></div></div></div>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+     <img src="http://www.seriouseats.com/images/2015/06/20142828-peruvian-cuisine-tiradito-kevin-cox.jpg"  alt="Chania" style="height:50%; width:auto;">
+        <div class="carousel-caption">
+    <h3>Peruvian Cuisine</h3>
+        <p>Represents the Peruvian Tradition</p>
+        </div>
+      </div>
+
+      <div class="item">
+       <img src="http://resources.touropia.com/gfx/d/best-places-to-visit-in-peru/puno.jpg"  alt="Chania" style="height:50%; width:auto;" >
+        <div class="carousel-caption">
+        <h3>Puno</h3>
+        <p>Port City On The Shores Of Lake Titicaca</p>
+        </div>
+      </div>
+    
+      <div class="item">
+    <img src="https://www.vjv.com/media/315120/peru-machu-picchu-ss.jpg"  alt="Flower" style="height:50%; width:auto;">
+        <div class="carousel-caption">
+        <h3>Machu Picchu</h3>
+        <p>Historic Site In Peru</p>
+        </div>
+      </div>
+
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+<form action="{{url_for('CreatePost')}}" method="post">
+  <center><h3 style="color:white;"><b><i>Write a Post</i></b></h3></center>
+
+ </center>
+
 
 
 

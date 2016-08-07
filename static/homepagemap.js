@@ -11,7 +11,7 @@ var labelIndex = 0;
 var france = { lat: 46.2276, lng: 2.2137 };
 var zero = { lat: 46.2276, lng: 0 };
 var india = { lat: 20.5937, lng: 78.9629 };
-var peru = { lat: 9.1900, lng: 75.0152 };
+var peru = { lat: -12.0464, lng: -77.0428};
 
 
   var FranceMarker = new google.maps.Marker({
