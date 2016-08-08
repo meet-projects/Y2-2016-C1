@@ -41,8 +41,8 @@ def logout():
 	session.pop('user_id', None)
 	return redirect(url_for('main'))
 
-@app.route('/CreatePost', methods=['POST'])
-def CreatePost():
+@app.route('/CreatePost/<string:country>', methods=['POST'])
+def CreatePost(country):
 	print("==============================================================================")
 	person_id = session['user_id']
 	# country = request.form['country']
@@ -53,13 +53,18 @@ def CreatePost():
 	# print(subject)
 	text = request.form['text']
 	print("functioning")
-	post = Posts(country="", title=title, subject="subject", text=text, person_id=person_id)
+	post = Posts(country=country, title=title, subject="subject", text=text, person_id=person_id)
 	print("==============================================================================")
 	print(post.text)
 	print("==============================================================================")
 	dbsession.add(post)
 	dbsession.commit()
-	return redirect(url_for('MyProfile'))
+	if country=="france":
+		return redirect(url_for('test'))
+	elif country=="india":
+		return redirect(url_for('test2'))
+	elif country=="peru":
+		return redirect(url_for('test3'))
 
 @app.route('/EditPost/<int:post_id>/<int:user_id>', methods=['GET', 'POST'])
 def EditPost(post_id, user_id):
@@ -114,15 +119,21 @@ def AddUser():
 
 @app.route('/France')
 def test():
-	return render_template('france.html')
+	user = dbsession.query(Person).filter_by(id = session['user_id']).first()
+	posts = dbsession.query(Posts).filter_by(country="france").all()
+	return render_template('france.html', user = user, posts = posts, country="france")
 
 @app.route('/India')
 def test2():
-	return render_template('india.html')
+	user = dbsession.query(Person).filter_by(id = session['user_id']).first()
+	posts = dbsession.query(Posts).filter_by(country="india").all()
+	return render_template('india.html', user = user, posts = posts, country="india")
 
 @app.route('/Peru')
 def test3():
-	return render_template('peru.html')
+	user = dbsession.query(Person).filter_by(id = session['user_id']).first()
+	posts = dbsession.query(Posts).filter_by(country="peru").all()
+	return render_template('peru.html', user = user, posts = posts, country="peru")
 
 @app.route('/country', methods=['POST'])
 def country():
