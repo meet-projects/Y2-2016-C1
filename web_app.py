@@ -32,9 +32,12 @@ def AboutUs():
 
 @app.route('/MyProfile')
 def MyProfile():
-	user = dbsession.query(Person).filter_by(id = session['user_id']).first()
-	posts = dbsession.query(Posts).filter_by(person_id = session['user_id']).all()
-	return render_template('MyProfile.html', user = user, posts = posts )
+		if "user_id" not in session:
+			return render_template('MyProfile.html', error = True)
+		else:
+			user = dbsession.query(Person).filter_by(id = session['user_id']).first()
+			posts = dbsession.query(Posts).filter_by(person_id = session['user_id']).all()
+			return render_template('MyProfile.html', user = user, posts = posts )
 
 @app.route('/logout')
 def logout():

@@ -56,11 +56,19 @@
 
 <div class = "container">
   <div class="wrapper" >
-
+<br>
+  {% if error == True %}
+  <center>
+  <h3 style="color: red; font-size:200%;">You Are Not Logged In, Please Sign In or Sign Up</h3>
+  {%else%}
+  </center>
 <!--div class="bg"-->
 <h1 style="color:white;"><center><b><u><i>{{ user.name }}'s Profile</i></u></b></center></h1>
 <div class="container">
 <div class="row">  
+  <div style="font-family:verdana; font-size:130%; color:white;">
+<h3 style="color:grey;"><b><i>Old Posts</i></b></h3>
+  {%endif%}
   
 <!-- <div class="container-fluid"> -->
  
@@ -68,8 +76,6 @@
   <center>
 
 
-  <div style="font-family:verdana; font-size:130%; color:white;">
-<h3 style="color:grey;"><b><i>Old Posts</i></b></h3>
 {% for post in posts %}
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail" style="padding-left:0px; padding-right:0px; padding-top:0px; padding-bottom:0px; border-left-width:0px; border-right-width:0px; border-top-width:0px; border-bottom-width:0px;">
