@@ -122,21 +122,35 @@ def AddUser():
 
 @app.route('/France')
 def test():
-	user = dbsession.query(Person).filter_by(id = session['user_id']).first()
-	posts = dbsession.query(Posts).filter_by(country="france").all()
-	return render_template('france.html', user = user, posts = posts, country="france")
+	if "user_id" not in session:
+		posts = dbsession.query(Posts).filter_by(country="france").all()
+		print(len(posts))
+		return render_template('france.html', error=True, posts=posts)
+	else:
+		user = dbsession.query(Person).filter_by(id = session['user_id']).first()
+		posts = dbsession.query(Posts).filter_by(country="france").all()
+		return render_template('france.html', user = user, posts = posts, country="france", error=False)
 
 @app.route('/India')
 def test2():
-	user = dbsession.query(Person).filter_by(id = session['user_id']).first()
-	posts = dbsession.query(Posts).filter_by(country="india").all()
-	return render_template('india.html', user = user, posts = posts, country="india")
+	if "user_id" not in session:
+		posts = dbsession.query(Posts).filter_by(country="india").all()
+		print(len(posts))
+		return render_template('india.html', posts=posts, error=True)
+	else:
+		user = dbsession.query(Person).filter_by(id = session['user_id']).first()
+		posts = dbsession.query(Posts).filter_by(country="india").all()
+		return render_template('india.html', user = user, posts = posts, country="india", error=False)
 
 @app.route('/Peru')
 def test3():
-	user = dbsession.query(Person).filter_by(id = session['user_id']).first()
-	posts = dbsession.query(Posts).filter_by(country="peru").all()
-	return render_template('peru.html', user = user, posts = posts, country="peru")
+	if "user_id" not in session:
+		posts = dbsession.query(Posts).filter_by(country="peru").all()
+		return render_template('peru.html', posts=posts, error=True)
+	else:
+		user = dbsession.query(Person).filter_by(id = session['user_id']).first()
+		posts = dbsession.query(Posts).filter_by(country="peru").all()
+		return render_template('peru.html', user = user, posts = posts, country="peru")
 
 @app.route('/country', methods=['POST'])
 def country():
